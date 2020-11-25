@@ -363,7 +363,7 @@ BoxComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.containerRef = _t.first);
-    } }, decls: 10, vars: 5, consts: [[3, "ngStyle"], ["container", ""], [1, "box", 3, "click"], [4, "ngIf", "ngIfThen", "ngIfElse"], ["futur", ""], ["past", ""], [1, "text"], ["alt", "gift", "src", "../../../assets/images/gift.png", 1, "gift"], [4, "ngIf"], ["alt", "openedGifg", "src", "../../../assets/images/opened_gift.png", 1, "gift"], ["alt", "miniatureGift", 1, "gift-image-miniature", 3, "src"]], template: function BoxComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 10, vars: 5, consts: [[3, "ngStyle"], ["container", ""], [1, "box", 3, "click"], [4, "ngIf", "ngIfThen", "ngIfElse"], ["futur", ""], ["past", ""], [1, "text"], ["alt", "gift", "src", "assets/images/gift.png", 1, "gift"], [4, "ngIf"], ["alt", "openedGifg", "src", "assets/images/opened_gift.png", 1, "gift"], ["alt", "miniatureGift", 1, "gift-image-miniature", 3, "src"]], template: function BoxComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BoxComponent_Template_div_click_2_listener() { return ctx.openDialog(); });
@@ -518,7 +518,7 @@ class GiftManagerService {
         this._currentUserEmail = '';
     }
     getChristmasData() {
-        return this.http.get('../assets/data.json');
+        return this.http.get('assets/data.json');
     }
     getCurrentUser() {
         return this.christmasData.users.filter(user => user.email === this._currentUserEmail)[0];
