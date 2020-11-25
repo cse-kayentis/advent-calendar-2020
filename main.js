@@ -518,7 +518,7 @@ class GiftManagerService {
         this._currentUserEmail = '';
     }
     getChristmasData() {
-        return this.http.get('./assets/data.json');
+        return this.http.get('../assets/data.json');
     }
     getCurrentUser() {
         return this.christmasData.users.filter(user => user.email === this._currentUserEmail)[0];
@@ -710,7 +710,7 @@ class DialogOpenBoxComponent {
     }
 }
 DialogOpenBoxComponent.ɵfac = function DialogOpenBoxComponent_Factory(t) { return new (t || DialogOpenBoxComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])); };
-DialogOpenBoxComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogOpenBoxComponent, selectors: [["app-dialog-open-box"]], decls: 4, vars: 3, consts: [[1, "gift-dialog"], [4, "ngIf"], ["mat-raised-button", "", 3, "click", 4, "ngIf"], ["alt", "opengift", "src", "../../../../assets/images/openGift.gif", 1, "gift"], [1, "description"], ["alt", "gift-image", 1, "gift-image", 3, "src"], ["mat-raised-button", "", 3, "click"]], template: function DialogOpenBoxComponent_Template(rf, ctx) { if (rf & 1) {
+DialogOpenBoxComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogOpenBoxComponent, selectors: [["app-dialog-open-box"]], decls: 4, vars: 3, consts: [[1, "gift-dialog"], [4, "ngIf"], ["mat-raised-button", "", 3, "click", 4, "ngIf"], ["alt", "opengift", "src", "assets/images/openGift.gif", 1, "gift"], [1, "description"], ["alt", "gift-image", 1, "gift-image", 3, "src"], ["mat-raised-button", "", 3, "click"]], template: function DialogOpenBoxComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DialogOpenBoxComponent_div_1_Template, 4, 3, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DialogOpenBoxComponent_div_2_Template, 3, 0, "div", 1);
