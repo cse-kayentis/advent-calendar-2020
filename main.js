@@ -518,7 +518,7 @@ class GiftManagerService {
         this._currentUserEmail = '';
     }
     getChristmasData() {
-        return this.http.get('../assets/data.json');
+        return this.http.get('./assets/data.json');
     }
     getCurrentUser() {
         return this.christmasData.users.filter(user => user.email === this._currentUserEmail)[0];
