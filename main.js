@@ -337,7 +337,7 @@ class BoxComponent {
     }
     ngOnInit() {
         this.getCookiesDay();
-        this.currentDay = new Date('Dec 10 2020');
+        this.currentDay = new Date();
         this.setIsOpenedGift();
         this.setPrize();
         this.containerStyle.position = 'absolute';
@@ -362,12 +362,14 @@ class BoxComponent {
         this.dialog.open(_dialogs_dialog_open_box_dialog_open_box_component__WEBPACK_IMPORTED_MODULE_1__["DialogOpenBoxComponent"], {
             data: { isWinningBox: this.prize, isOpenedGift: this.isOpenedGift, isCurrentDayBox, canOpenGift }
         });
-        this.getCookiesDay();
-        if (!this.openDays.includes(this.boxPosition.day.toString())) {
-            this.openDays.push(this.boxPosition.day.toString());
-            this.cookieService.set(COOKIE_OPEN_BOX, this.openDays.toString());
+        if (canOpenGift) {
+            this.getCookiesDay();
+            if (!this.openDays.includes(this.boxPosition.day.toString())) {
+                this.openDays.push(this.boxPosition.day.toString());
+                this.cookieService.set(COOKIE_OPEN_BOX, this.openDays.toString());
+            }
+            this.isOpenedGift = false;
         }
-        this.isOpenedGift = false;
     }
     setPrize() {
         const currentUser = this.giftManagerService.getCurrentUser();
@@ -379,18 +381,12 @@ class BoxComponent {
         }
     }
     setIsOpenedGift() {
-        const currentYear = new Date().getFullYear();
-        // const startDate = new Date('Dec 01 ' + currentYear);
-        // if (this.currentDay < startDate ) {
-        //   this.isOpenedGift = false;
-        // } else {
         if (this.cookieService.check(COOKIE_OPEN_BOX)) {
             this.isOpenedGift = !this.openDays.includes(this.boxPosition.day.toString());
         }
         else {
             this.isOpenedGift = this.currentDay.getDate() <= this.boxPosition.day;
         }
-        // }
     }
 }
 BoxComponent.ɵfac = function BoxComponent_Factory(t) { return new (t || BoxComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shared_gift_manager_service__WEBPACK_IMPORTED_MODULE_3__["GiftManagerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"])); };
@@ -886,7 +882,7 @@ class LoginComponent {
     ngOnInit() {
     }
     login() {
-        const currentDate = new Date('Dec 01 2020');
+        const currentDate = new Date();
         if (currentDate < new Date('Dec 01 2020')) {
             this.showErrorDate = true;
         }
