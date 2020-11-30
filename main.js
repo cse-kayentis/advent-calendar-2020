@@ -818,6 +818,7 @@ const routes = [
             data: _shared_data_resolver_service__WEBPACK_IMPORTED_MODULE_5__["DataResolver"],
         } },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 class AppRoutingModule {
 }
